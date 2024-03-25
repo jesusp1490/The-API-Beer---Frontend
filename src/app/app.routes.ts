@@ -1,3 +1,16 @@
-import { Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { AppComponent } from './app.component'; // Asegúrate de importar AppComponent si lo necesitas
 
-export const routes: Routes = [];
+const routes: Routes = [
+  // Define tus rutas aquí
+  // Ejemplo:
+  // { path: '', component: AppComponent },
+  // { path: 'other', component: OtherComponent },
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

@@ -1,13 +1,36 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { BeerService } from './services/beer.service';
+import { Beer } from './models/beer.model';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss'],
+  providers: [BeerService]
 })
-export class AppComponent {
-  title = 'the-api-beer-front';
+export class AppComponent implements OnInit {
+  beer: Beer | undefined;
+  showNavbar = false;
+  showDetails = false;
+
+  constructor(private beerService: BeerService) {}
+
+  ngOnInit() {
+    this.fetchBeer();
+  }
+
+  fetchBeer() {
+    this.beerService.getBeer().subscribe((beer: Beer) => {
+      this.beer = beer;
+    });
+  }
+
+  onMouseMove(event: MouseEvent) {
+    this.showNavbar = event.clientY < 50;
+  }
+
+  scrollToDetails() {
+    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+    this.showDetails = true;
+  }
 }
