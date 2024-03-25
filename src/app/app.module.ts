@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app.routes'; 
-import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbar/navbar.component'; // Importa el componente navbar
-import { BeerService } from './services/beer.service'; // Importa el servicio beer
+import { AppComponent } from '../app/app.component';
+import { NavbarComponent } from '../app/components/navbar/navbar.component'; 
+import { BeerService } from '../app/services/beer.service'; 
 
 @NgModule({
   declarations: [
