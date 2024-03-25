@@ -4,9 +4,8 @@ import { Beer } from './models/beer.model';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  providers: [BeerService]
+  templateUrl: '../app/app.component.html',
+  styleUrls: ['../app/app.component.scss']
 })
 export class AppComponent implements OnInit {
   beer: Beer | undefined;

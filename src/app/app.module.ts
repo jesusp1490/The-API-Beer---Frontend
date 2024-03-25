@@ -1,23 +1,23 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app.routes'; 
 import { AppComponent } from '../app/app.component';
-import { NavbarComponent } from '../app/components/navbar/navbar.component'; 
 import { BeerService } from '../app/services/beer.service'; 
+import { NavbarModule } from './components/navbar/navbar.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent // Añade el componente navbar a las declaraciones
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule // Importa tus módulos de rutas si los tienes
+    AppRoutingModule,
+    NavbarModule
   ],
-  providers: [BeerService], // Añade el servicio beer a los proveedores
-  bootstrap: [AppComponent]
+  providers: [BeerService], 
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }
