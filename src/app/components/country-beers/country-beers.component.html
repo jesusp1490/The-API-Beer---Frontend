@@ -1,0 +1,12 @@
+<div *ngIf="countryName">
+    <h2>Beers from {{ countryName }}</h2>
+    <div class="beer-list">
+        <div *ngFor="let beer of beers" class="beer-card">
+            <img [src]="beer.imageUrl" [alt]="beer.name">
+            <h3>{{ beer.name }}</h3>
+            <p><strong>Category:</strong> {{ beer.category }} </p>
+            <p><strong>Price:</strong> €{{ beer.price }} </p>
+            <p><strong>Description:</strong> {{ beer.description }} </p>
+        </div>
+    </div>
+</div>
